@@ -1,0 +1,17 @@
+html {
+  body {
+    .is-col-green {
+      color: $primary-green;
+    }
+    .is-col-red {
+      color: $primary-red;
+    }
+    .is-col-blue {
+      color: $primary-blue;
+    }
+
+    .is-permMarker {
+      font-family: "PermanentMarker";
+    }
+  }
+}
