@@ -20,3 +20,37 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "PermanentMarker";
+  src: url("../fonts/PermanentMarker-Regular.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "QuickSandLight";
+  src: url("../fonts/Quicksand-Light.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "QuickSandMedium";
+  src: url("../fonts/Quicksand-Medium.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "QuickSandBold";
+  src: url("../fonts/Quicksand-Bold.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  body {
+    font-family: "rubikRegular";
+  }
+}

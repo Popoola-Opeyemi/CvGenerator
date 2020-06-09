@@ -1,4 +1,81 @@
 html {
   body {
+    // ================ HomePage ==================
+    .homepage {
+      margin-top: 80px;
+      &__section {
+        .leftContent {
+          margin-top: 60px;
+          &-content {
+            margin: 80px 0px 50px;
+          }
+          &-navigate {
+            &_first {
+            }
+            &_second {
+              padding-left: 13px;
+              i.mdi {
+                font-size: 20px;
+              }
+              span {
+                // text-decoration: underline;
+              }
+            }
+          }
+        }
+        .right-content {
+          .image-container {
+            width: 550px;
+          }
+        }
+      }
+
+      &__section-2 {
+        margin: 30px 0px;
+        .section-title {
+          padding: 40px 0px;
+        }
+        background-image: url("../../static/background-clip.png");
+      }
+
+      &__section-3 {
+        margin: 150px 0px;
+        .contain-left {
+          &-title {
+            padding: 10px 0px;
+          }
+          &-container {
+            margin-top: 50px;
+            .textContent {
+              padding-bottom: 30px;
+              &-title {
+              }
+              &-content {
+                padding-top: 10px;
+              }
+            }
+          }
+        }
+        .contain-right {
+        }
+      }
+
+      &__section-4 {
+        background-image: url("../../static/testimonial.png");
+        background-size: cover;
+        background-attachment: fixed;
+        color: white;
+        background-repeat: no-repeat;
+        padding: 70px 0px;
+      }
+      &__section-5 {
+        padding: 50px 0px;
+
+        background-color: $custom-light-purple;
+        .app-slider {
+          // width: 50%;
+        }
+      }
+    }
   }
 }

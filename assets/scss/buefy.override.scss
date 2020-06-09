@@ -1,2 +1,9 @@
+$colors: (
+  "custom-green": (
+    $primary-green,
+    white
+  )
+);
+
 @import "~bulma";
 @import "~buefy/src/scss/buefy";

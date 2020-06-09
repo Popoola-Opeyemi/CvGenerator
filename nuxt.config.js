@@ -23,12 +23,14 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    "@/assets/scss/styles.scss"
+    "@/assets/scss/style.scss",
+    "@node_modules/@mdi/font/css/materialdesignicons.css"
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '@/plugins/VueSwiper', mode: 'client' },
   ],
   /*
   ** Nuxt.js dev-modules

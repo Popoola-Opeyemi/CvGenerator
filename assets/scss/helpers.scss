@@ -6,8 +6,35 @@ html {
     .is-col-red {
       color: $primary-red;
     }
+
     .is-col-blue {
       color: $primary-blue;
+    }
+
+    .is-col-yellow {
+      color: $primary-yellow;
+    }
+
+    .is-rubik-light {
+      font-family: "rubikLight";
+    }
+
+    .is-rubik-regular {
+      font-family: "rubikRegular";
+    }
+
+    .is-rubik-bold {
+      font-family: "rubikBold";
+    }
+    .is-Qlight {
+      font-family: "QuickSandLight";
+    }
+    .is-Qmedium {
+      font-family: "QuickSandMedium";
+    }
+
+    .is-Qbold {
+      font-family: "QuickSandBold";
     }
 
     .is-permMarker {
