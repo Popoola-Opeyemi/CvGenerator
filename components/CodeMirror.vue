@@ -1,9 +1,31 @@
 <template>
-  <div>
+  <div class="vue-codemirror">
     <client-only placeholder="Codemirror Loading...">
+      <div class="editor-controls">
+        <div class="editor-controls-select">
+          <b-select
+            v-model="theme"
+            @input="themeslect($event)"
+            class="theme-selector is-warning"
+            placeholder="Select a name"
+            expanded
+          >
+            <option
+              v-for="option in ListItem"
+              :value="option.value"
+              :key="option.id"
+            >
+              <span class="theme is-Qbold">Theme:</span>
+              <span class="theme-value">
+                {{ option.name }}
+              </span>
+            </option>
+          </b-select>
+        </div>
+      </div>
       <codemirror
         ref="cmEditor"
-        :value="code"
+        :value="value"
         :options="cmOptions"
         @ready="onCmReady"
         @focus="onCmFocus"
@@ -13,45 +35,79 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import "codemirror/theme/base16-dark.css";
 import "codemirror/theme/dracula.css";
-import cv from "@/Vdata/cv.json";
-export default {
+import "codemirror/theme/paraiso-light.css";
+import "codemirror/theme/rubyblue.css";
+import "codemirror/theme/mbo.css";
+import "codemirror/theme/paraiso-dark.css";
+
+import { ThemeList, cmOptions } from "@/Vdata/index";
+import Vue from "vue";
+
+export default Vue.extend({
+  props: {
+    value: {
+      type: String,
+      default: () => ""
+    }
+  },
   data() {
     return {
-      code: cv,
-      cmOptions: {
-        tabSize: 4,
-        mode: {
-          name: "javascript",
-          mime: "application/json",
-          json: true,
-          statementIndent: 2
-        },
-        theme: "dracula",
-        lineNumbers: true,
-        line: true
-        // more CodeMirror options...
-      }
+      theme: "dracula",
+      ListItem: ThemeList,
+      cmOptions: cmOptions
     };
   },
   methods: {
-    onCmReady(cm) {
-      console.log("the editor is readied!", cm);
+    onCmReady(cm: any) {
+      cm.setSize("auto", "96vh");
     },
-    onCmFocus(cm) {
+    onCmFocus(cm: any) {
       console.log("the editor is focused!", cm);
     },
-    onCmCodeChange(newCode) {
-      console.log("this is new code", newCode);
-      this.code = newCode;
-    }
-  },
-  computed: {
-    codemirror() {
-      return this.$refs.cmEditor.codemirror;
+    onCmCodeChange(newCode: string) {
+      this.$emit("input", newCode);
+    },
+    themeslect(event: any) {
+      this.cmOptions.theme = event;
     }
   }
-};
+});
 </script>
+
+<style lang="scss" scoped>
+.vue-codemirror {
+  position: relative;
+  .editor-controls {
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    left: 88%;
+    top: 10px;
+    &-select {
+      // border-color: #209cee;
+      background-color: transparent;
+      height: 400px;
+      // cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      select {
+        background-color: transparent;
+      }
+    }
+  }
+}
+.CodeMirror-scroll {
+  overflow: scroll !important;
+  margin-bottom: 0;
+  margin-right: 0;
+  padding-bottom: 0;
+  height: 100%;
+  outline: none;
+  position: relative;
+  border: 1px solid #dddddd;
+}
+</style>

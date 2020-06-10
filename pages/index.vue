@@ -14,9 +14,11 @@
               resume in less than 30 seconds
             </div>
             <div class="leftContent-navigate is-flex">
-              <b-button type="leftContent-navigate_first is-custom-green "
-                >Get Started</b-button
-              >
+              <nuxt-link to="/generate">
+                <b-button type="leftContent-navigate_first is-custom-green "
+                  >Get Started</b-button
+                >
+              </nuxt-link>
               <div class="leftContent-navigate_second is-col-green">
                 <b-button icon-left="mdi mdi-play">
                   Watch the Video

@@ -1,9 +1,15 @@
 import { GetterTree, ActionTree, MutationTree } from "vuex";
+import {
+  getLocalStorage,
+  saveToLocalStorage,
+  removeFromLocalStorage
+} from "@/utils/";
+import cv from "@/Vdata/cv.json";
 
 export const state = () => ({
   navfixedTop: false as boolean,
   page_title: "" as string,
-
+  jsonData: {} as object,
   NavigationLink: [
     { name: "homepage", sections: "section-1", link: "/" },
     { name: "Features", sections: "section-2", link: "/backers" },
@@ -27,6 +33,9 @@ export const mutations: MutationTree<RootState> = {
 
   savePagetitle(state: RootState, data: string) {
     state.page_title = data;
+  },
+  savejsonData(state: RootState, data: object) {
+    state.jsonData = data;
   }
 };
 
@@ -43,9 +52,10 @@ export const actions: ActionTree<RootState, RootState> = {
   async Post({ commit }, param) {
     try {
       let req = await this.$axios.$post(`api/${param.url}`, param.data);
-      return req;
+      return { status: "done", data: req };
     } catch (error) {
       console.log(error);
+      return { status: "error", data: null };
     }
   }
 };

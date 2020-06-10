@@ -16,6 +16,16 @@
           <div class="is-col-navy is-gbold is-capitalized">{{ nav.name }}</div>
         </b-navbar-item>
 
+        <b-navbar-item href="#">
+          <nuxt-link to="/generate">
+            <b-button size="is-small is-info" outlined type="is-custom-success">
+              <div class=" is-gbold is-capitalized">
+                Generate Resume
+              </div>
+            </b-button>
+          </nuxt-link>
+        </b-navbar-item>
+
         <b-navbar-item href="#" class="is-hidden-desktop">
           <b-button class="is-size-6" type="is-custom-success">
             <div class=" is-gbold is-capitalized">
@@ -66,7 +76,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .nav-container {
   .navbar {
-    background-color: #dd2476;
+    background-color: #22282e;
     transition: transform 500ms ease, background 500ms ease,
       -webkit-transform 500ms ease;
     // top: 80px;
@@ -78,10 +88,14 @@ export default Vue.extend({
     .navbar-menu {
       a.navbar-item {
         color: white;
-        font-family: "QuickSandBold";
+        // font-family: "QuickSandBold";
+      }
+      a.navbar-item:hover {
+        color: white;
+        background-color: #22282e;
       }
     }
-    padding: 15px 13.9%;
+    padding: 10px 13.9%;
   }
 }
 @media (max-width: 1199px) {

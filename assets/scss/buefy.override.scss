@@ -1,3 +1,9 @@
+.theme-selector {
+  select {
+    background-color: transparent;
+  }
+}
+
 .carousel-list {
   &.has-shadow {
     box-shadow: unset !important;

@@ -24,14 +24,17 @@ module.exports = {
   */
   css: [
     "@/assets/scss/style.scss",
-    "@node_modules/@mdi/font/css/materialdesignicons.css"
+    "@node_modules/@mdi/font/css/materialdesignicons.css",
+    'codemirror/lib/codemirror.css',
+    'codemirror/theme/base16-dark.css',
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
     { src: "@/plugins/vueScroll" },
-    { src: "@/plugins/vueCodeMirror", mode: 'client'  },
+    { src: "@/plugins/vueCodeMirror", ssr: false },
+    { src: "@/plugins/jsonlint", ssr: false },
     { src: '@/plugins/VueSwiper', mode: 'client' },
   ],
 
@@ -67,6 +70,9 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+      config.node = {
+        fs: 'empty'
+      }
     }
   }
 }

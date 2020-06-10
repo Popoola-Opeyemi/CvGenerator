@@ -11,6 +11,19 @@ export interface scrollOptions {
   y: boolean;
 }
 
+interface codeMirror {
+  gutters?: Array<string>;
+  lint?: boolean;
+  tabSize?: number;
+  mode?: string;
+  theme?: string;
+  hintOptions?: object;
+  highlightDifferences?: boolean;
+  highlightSelectionMatches?: {};
+  lineNumbers?: boolean;
+  extraKeys?: {};
+}
+
 interface Feature {
   title: string;
   content: string;
@@ -20,6 +33,11 @@ interface Feature {
 
 interface Slider {
   image: string;
+}
+
+interface Theme {
+  name: string;
+  value: string;
 }
 
 interface Testimonial {
@@ -39,6 +57,7 @@ interface Features extends Array<Feature> {}
 interface Testimonials extends Array<Testimonial> {}
 interface Sliders extends Array<Slider> {}
 interface MoreItems extends Array<More> {}
+interface Themes extends Array<Theme> {}
 
 export const FeatureList: Features = [
   {
@@ -127,6 +146,37 @@ export const moreItemsList: MoreItems = [
     image_url: "4.png"
   }
 ];
+
+export const ThemeList: Themes = [
+  { name: "Dracula", value: "dracula" },
+  { name: "Snow-white", value: "default" },
+  { name: "Paraiso-dark", value: "paraiso-dark" },
+  { name: "Rubyblue", value: "rubyblue" },
+  { name: "Mbo", value: "mbo" },
+  { name: "Paraiso-light", value: "paraiso-light" }
+];
+
+export const cmOptions: codeMirror = {
+  gutters: ["CodeMirror-lint-markers"],
+  lint: true,
+  tabSize: 4,
+  mode: "application/json",
+  theme: "dracula",
+  highlightDifferences: true,
+  highlightSelectionMatches: { showToken: /\w/, annotateScrollbar: true },
+  lineNumbers: true,
+  hintOptions: {
+    completeSingle: false
+  },
+  extraKeys: {
+    F11(cm: any) {
+      cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+    },
+    Esc(cm: any) {
+      if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+    }
+  }
+};
 
 export function Scroller(ID: string): scrollOptions {
   const Options: scrollOptions = {
