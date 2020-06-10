@@ -64,7 +64,7 @@ export default {
 .testimonials {
   filter: blur();
 
-  padding: 70px 0px;
+  padding: 100px 0px;
   background: rgba(0, 0, 0, 0.72);
 
   &__left {

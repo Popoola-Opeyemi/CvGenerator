@@ -1,5 +1,13 @@
 <template>
   <div class="carousel">
+    <div class="carousel__title is-size-7 has-text-centered is-col-purple">
+      GALLERY
+    </div>
+    <div
+      class="carousel__subtitle has-text-centered title is-3 is-rubik-bold is-col-purple"
+    >
+      App Screenshots
+    </div>
     <b-carousel-list
       :data="Items"
       :repeat="repeat"

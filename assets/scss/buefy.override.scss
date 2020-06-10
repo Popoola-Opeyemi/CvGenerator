@@ -1,3 +1,42 @@
+.carousel-list {
+  &.has-shadow {
+    box-shadow: unset !important;
+  }
+}
+
+.b-tabs {
+  .tabs {
+    ul {
+      li {
+        background: #f5eff7;
+        color: #b5a4c8;
+        border-color: #faf6fb #faf6fb #fff;
+        font-size: 19px;
+        a {
+          padding: 1rem 1rem;
+          color: #b5a4c8;
+        }
+        a:hover {
+          background-color: unset;
+        }
+        &.is-active {
+          a {
+            color: black;
+            padding: 1rem 1rem;
+            border-color: #ce75b4 #faf6fb #fff;
+            // border-bottom-color: unset;
+            border-width: 2px;
+          }
+          a:hover {
+            background-color: white !important;
+          }
+        }
+      }
+    }
+    // margin-bottom: 10px !important;
+  }
+}
+
 $colors: (
   "custom-green": (
     $primary-green,

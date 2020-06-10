@@ -3,12 +3,22 @@ html {
     .is-col-green {
       color: $primary-green;
     }
+    .is-bg-green {
+      background-color: $primary-green;
+    }
     .is-col-red {
       color: $primary-red;
     }
 
     .is-col-blue {
       color: $primary-blue;
+    }
+
+    .is-col-purple {
+      color: $custom-purple;
+    }
+    .is-col-reverse {
+      flex-direction: row-reverse;
     }
 
     .is-col-yellow {

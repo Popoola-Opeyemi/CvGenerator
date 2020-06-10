@@ -5,10 +5,10 @@ export const state = () => ({
   page_title: "" as string,
 
   NavigationLink: [
-    { name: "homepage", link: "/" },
-    { name: "Backers", link: "/backers" },
-    { name: "campaigns", link: "/campaigns" },
-    { name: "Contact", link: "/contact" }
+    { name: "homepage", sections: "section-1", link: "/" },
+    { name: "Features", sections: "section-2", link: "/backers" },
+    { name: "Gallery", sections: "section-5", link: "/contact" },
+    { name: "Contact", sections: "section-5", link: "/contact" }
   ] as Array<{}>,
 
   Socials: [

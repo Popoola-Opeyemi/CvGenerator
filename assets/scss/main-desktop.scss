@@ -2,7 +2,7 @@ html {
   body {
     // ================ HomePage ==================
     .homepage {
-      margin-top: 80px;
+      padding-top: 100px;
       &__section {
         .leftContent {
           margin-top: 60px;
@@ -31,7 +31,7 @@ html {
       }
 
       &__section-2 {
-        margin: 30px 0px;
+        padding: 30px 0px;
         .section-title {
           padding: 40px 0px;
         }
@@ -39,7 +39,7 @@ html {
       }
 
       &__section-3 {
-        margin: 150px 0px;
+        padding: 150px 0px;
         .contain-left {
           &-title {
             padding: 10px 0px;
@@ -61,17 +61,21 @@ html {
       }
 
       &__section-4 {
+        padding: 70px 0px;
         background-image: url("../../static/testimonial.png");
         background-size: cover;
         background-attachment: fixed;
         color: white;
         background-repeat: no-repeat;
-        padding: 70px 0px;
       }
       &__section-5 {
-        padding: 50px 0px;
+        padding: 60px 0px;
+      }
+      &__section-6 {
+        padding: 100px 0px;
 
         background-color: $custom-light-purple;
+        // background-color: $primary-green;
         .app-slider {
           // width: 50%;
         }

@@ -1,22 +1,35 @@
 <template>
-  <div class="container navigation-container">
-    <b-navbar :fixed-top="navfixedTop" :class="navfixedTop ? 'fixed-top' : ''">
+  <div class="nav-container">
+    <b-navbar :shadow="true" :fixed-top="true" class="nav-content">
       <template slot="brand">
         <b-navbar-item tag="router-link" :to="{ path: '/' }">
-          <!-- <img class="site-logo" src="" /> -->
+          <img class="site-logo" width="25%" src="logo.png" />
         </b-navbar-item>
       </template>
       <template slot="end">
         <b-navbar-item
-          tag="nuxt-link"
           class="navigation-item"
           v-for="nav in navLink"
+          @click="navClick(nav.sections)"
           :key="nav.id"
-          :to="nav.link"
         >
-          <div class="link-container is-uppercase is-size-6-desktop	">
-            {{ nav.name }}
-          </div>
+          <div class="is-col-navy is-gbold is-capitalized">{{ nav.name }}</div>
+        </b-navbar-item>
+
+        <b-navbar-item href="#" class="is-hidden-desktop">
+          <b-button class="is-size-6" type="is-custom-success">
+            <div class=" is-gbold is-capitalized">
+              Start Campaign
+            </div>
+          </b-button>
+        </b-navbar-item>
+
+        <b-navbar-item href="#" class="is-hidden-desktop">
+          <b-button class="is-size-6" type="is-custom-success">
+            <div class=" is-gbold is-capitalized">
+              Donate now
+            </div>
+          </b-button>
         </b-navbar-item>
       </template>
     </b-navbar>
@@ -25,10 +38,15 @@
 
 <script lang="ts">
 import Vue, { PropOptions } from "vue";
+import { Scroller } from "@/Vdata/index";
 
 export default Vue.extend({
   props: {
-    navfixedTop: {
+    isActive: {
+      type: Boolean,
+      default: () => false
+    },
+    fixedNav: {
       type: Boolean,
       default: () => false
     },
@@ -36,19 +54,46 @@ export default Vue.extend({
       type: Array,
       default: () => []
     }
+  },
+  methods: {
+    navClick(event: any) {
+      this.$emit("navClick", event);
+    }
   }
-  // props: {
-  //   navfixedTop: {
-  //     type: Boolean,
-  //     required: true,
-  //     default: () => false
-  //   },
-  //   navLink: {
-  //     type: Array,
-  //     required: true
-  //   } as PropOptions<{}>
-  // }
 });
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.nav-container {
+  .navbar {
+    background-color: #dd2476;
+    transition: transform 500ms ease, background 500ms ease,
+      -webkit-transform 500ms ease;
+    // top: 80px;
+  }
+  .nav-content {
+    .site-logo {
+      max-height: 2rem;
+    }
+    .navbar-menu {
+      a.navbar-item {
+        color: white;
+        font-family: "QuickSandBold";
+      }
+    }
+    padding: 15px 13.9%;
+  }
+}
+@media (max-width: 1199px) {
+  .nav-container {
+    .nav-content {
+      padding: 0px 0px;
+      text-align: center;
+      .site-logo {
+        max-height: 20px;
+        // font-size: 10px;
+      }
+    }
+  }
+}
+</style>

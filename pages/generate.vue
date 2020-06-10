@@ -1,11 +1,18 @@
 <template>
-  <div class="generate">
-    <nuxt />
+  <div>
+    <code-mirror />
   </div>
 </template>
 
-<script>
-export default {};
+<script lang="ts">
+import Vue from "vue";
+import CodeMirror from "@/components/CodeMirror.vue";
+export default Vue.extend({
+  layout: "generate",
+  components: {
+    CodeMirror
+  }
+});
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

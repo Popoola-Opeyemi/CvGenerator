@@ -1,5 +1,5 @@
 <template>
-  <div class="homepage">
+  <div class="homepage" id="section-1">
     <custom-section :class="'homepage__section'">
       <div class="columns">
         <div class="column is-5">
@@ -38,7 +38,7 @@
       </div>
     </custom-section>
 
-    <custom-section :class="'homepage__section-2'">
+    <custom-section :class="'homepage__section-2'" id="section-2">
       <div class="columns is-centered">
         <div class="section-title title is-3 is-Qmedium">
           Features you'll love
@@ -49,7 +49,7 @@
       </div>
     </custom-section>
 
-    <custom-section :class="'homepage__section-3'">
+    <custom-section :class="'homepage__section-3'" id="section-3">
       <div class="columns">
         <div class="column">
           <div class="contain-left">
@@ -104,14 +104,21 @@
       </div>
     </custom-section>
 
-    <custom-section :class="'homepage__section-4'">
+    <custom-section :class="'homepage__section-4'" id="section-4">
       <testimonials :Testimonials="Testimonials" />
     </custom-section>
 
-    <custom-section :class="'homepage__section-5'" :hide-container="false">
-      <more-info />
+    <custom-section
+      :class="'homepage__section-5'"
+      :hide-container="false"
+      id="section-5"
+    >
       <!-- <custom-carousel /> -->
-      <!-- <app-slider :Items="SliderList" class="app-slider" /> -->
+      <app-slider :Items="SliderList" class="app-slider" />
+    </custom-section>
+
+    <custom-section :class="'homepage__section-6'" id="section-6">
+      <more-info :item-list="moreItemsList" />
     </custom-section>
   </div>
 </template>
@@ -123,8 +130,16 @@ import ItemList from "~/components/ItemList.vue";
 import Testimonials from "~/components/Testimonials.vue";
 import CustomCarousel from "~/components/AppCarousel.vue";
 import MoreInfo from "~/components/More.vue";
+import AppSlider from "~/components/CarouselList.vue";
+import NavBar from "~/components/NavBar.vue";
+import { mapState } from "vuex";
 
-import { FeatureList, SliderList, TestimoniaList } from "~/Vdata/index.ts";
+import {
+  FeatureList,
+  SliderList,
+  TestimoniaList,
+  moreItemsList
+} from "~/Vdata/index.ts";
 
 export default Vue.extend({
   components: {
@@ -132,14 +147,20 @@ export default Vue.extend({
     ItemList,
     Testimonials,
     MoreInfo,
-    CustomCarousel
+    CustomCarousel,
+    AppSlider,
+    NavBar
   },
   data() {
     return {
       Testimonials: TestimoniaList,
       featureList: FeatureList,
-      SliderList: SliderList
+      SliderList: SliderList,
+      moreItemsList: moreItemsList
     };
+  },
+  computed: {
+    ...mapState(["NavigationLink", "Socials", "page_title", "navfixedTop"])
   }
 });
 </script>

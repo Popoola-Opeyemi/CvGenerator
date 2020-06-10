@@ -30,8 +30,12 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: "@/plugins/vueScroll" },
+    { src: "@/plugins/vueCodeMirror", mode: 'client'  },
     { src: '@/plugins/VueSwiper', mode: 'client' },
   ],
+
+  // 
   /*
   ** Nuxt.js dev-modules
   */
@@ -44,6 +48,7 @@ module.exports = {
   modules: [
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
+    'vue-scrollto/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',

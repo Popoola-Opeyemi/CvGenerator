@@ -1,3 +1,16 @@
+export interface scrollOptions {
+  container: string;
+  easing: string;
+  offset: number;
+  force: boolean;
+  cancelable: boolean;
+  onStart?(element: any): any;
+  onDone?(element: any): any;
+  onCancel?(element: any): any;
+  x: boolean;
+  y: boolean;
+}
+
 interface Feature {
   title: string;
   content: string;
@@ -15,9 +28,8 @@ interface Testimonial {
   location: string;
 }
 
-interface MOre {
+interface More {
   title: string;
-  screen: string;
   subtitle: string;
   content: string;
   image_url: string;
@@ -26,6 +38,7 @@ interface MOre {
 interface Features extends Array<Feature> {}
 interface Testimonials extends Array<Testimonial> {}
 interface Sliders extends Array<Slider> {}
+interface MoreItems extends Array<More> {}
 
 export const FeatureList: Features = [
   {
@@ -79,28 +92,51 @@ export const SliderList: Sliders = [
   { image: "../app/1.png" },
   { image: "../app/2.png" },
   { image: "../app/3.png" }
-  // {
-  //   image: "https://picsum.photos/id/0/1230/500"
-  // },
-  // {
-  //   image: "https://picsum.photos/id/1/1230/500"
-  // },
-  // {
-  //   image: "https://picsum.photos/id/2/1230/500"
-  // },
-  // {
-  //   image: "https://picsum.photos/id/3/1230/500"
-  // },
-  // {
-  //   image: "https://picsum.photos/id/4/1230/500"
-  // },
-  // {
-  //   image: "https://picsum.photos/id/5/1230/500"
-  // },
-  // {
-  //   image: "https://picsum.photos/id/6/1230/500"
-  // },
-  // {
-  //   image: "https://picsum.photos/id/7/1230/500"
-  // }
 ];
+
+export const moreItemsList: MoreItems = [
+  {
+    title: "FavReaders",
+    subtitle:
+      "The more that you read,the more things you will know.The more you learn,the more places you'll go.",
+    content: `FavReaders is a community of developers that share 
+    the same goal of one book per day.Its an enriching section,
+    everyone get to read same book per day and share opinion
+    on the morals of the book.`,
+    image_url: "4.png"
+  },
+  {
+    title: "FavCode54",
+    subtitle: "Everyone can code!",
+    content: `We have a mission to develop the 
+    African continent by making technology accessible 
+    to everyone. We teach, we mentor, we develop! 
+    Tech's taking over Africa.it's a revolution.`,
+    image_url: "4.png"
+  },
+  {
+    title: "FavBrain",
+    subtitle: "Find that quality hand for the job!",
+    content: `We bring together capable hands across Africa that are fit to take on any project ..`,
+    image_url: "4.png"
+  },
+  {
+    title: "Host9ja",
+    subtitle: "Hosting made easier!",
+    content: `We provide business the perfect domain with strong ,secured and reliable hosting services.`,
+    image_url: "4.png"
+  }
+];
+
+export function Scroller(ID: string): scrollOptions {
+  const Options: scrollOptions = {
+    container: ID,
+    easing: "ease-in",
+    offset: -60,
+    force: true,
+    cancelable: true,
+    x: false,
+    y: true
+  };
+  return Options;
+}
