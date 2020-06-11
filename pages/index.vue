@@ -35,7 +35,7 @@
           <div class="right-content has-text-centered">
             <img
               class="image-container"
-              src="oval-image.png"
+              src="oval_image.png"
               alt=""
               srcset=""
             />
