@@ -61,6 +61,17 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true,
+    credentials: true
+  },
+
+  proxy: {
+    "/api": "http://127.0.0.1:3000",
+    "/public": "http://127.0.0.1:3000",
+    "/static": "http://127.0.0.1:3000"
+    // "/api": "https://pbgcare.co.uk/",
+    // "/public": "https://pbgcare.co.uk/",
+    // "/static": "https://pbgcare.co.uk/"
   },
   /*
   ** Build configuration

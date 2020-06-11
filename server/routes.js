@@ -23,6 +23,8 @@ router.post("/api/generate", async (req, res) => {
     return res.status(400).send({ errors: true, data: { "message": "cannot find fields" } })
   }
 
+
+
   //setting options for PDF
   var options = { format: 'A4' };
 
@@ -37,7 +39,11 @@ router.post("/api/generate", async (req, res) => {
 
   //create PDF from the above generated html
   pdf.create(html, options).toFile(`./server/public/${filename}.pdf`, function (err, resp) {
-    if (resp) return res.json({ data: { filename: filename + ".pdf" }, errors: false })
+    if (resp) return res.json({
+      data: {
+        filename: `/static/${filename}.pdf`
+      }, errors: false
+    })
     if (err) return res.status(500).send({ errors: true, })
   });
 

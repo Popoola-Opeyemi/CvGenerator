@@ -15,7 +15,7 @@ import Vue from "vue";
 import CodeMirror from "@/components/CodeMirror.vue";
 import EditorFooter from "@/components/EditorFooter.vue";
 
-import { clone, tryParseJSON, Notification, Notify } from "@/utils";
+import { clone, tryParseJSON, Notification, Notify, isEmpty } from "@/utils";
 
 import cv from "@/Vdata/cv.json";
 
@@ -33,6 +33,7 @@ export default Vue.extend({
   data() {
     return {
       isLoading: false as boolean,
+      downloadLink: "" as string,
       valid: true,
       cvData: "" as string,
       original: "" as string
@@ -41,25 +42,41 @@ export default Vue.extend({
 
   methods: {
     async download(event: any) {
-      if (!this.valid) {
+      //@ts-ignore
+      let isValid = tryParseJSON(this.$jsonlint, this.cvData);
+
+      if (!isValid.status) {
         Notify(
           this,
-          "Your Document has unfixed Errors, Please fix before continuing",
+          "Your Document has unfixed Errors, Please fix them before continuing",
+          "is-info"
+        );
+        return;
+      }
+      let empty = isEmpty(isValid.data);
+
+      if (empty) {
+        Notify(
+          this,
+          "Your Document is Empty, Please add some content",
           "is-info"
         );
         return;
       }
 
       this.isLoading = true;
+
       let param = {
         url: "generate",
-        data: this.cvData
+        data: isValid.data
       };
+
       let req = await this.$store.dispatch("Post", param);
 
       if (req.status == "done") {
         this.isLoading = false;
-        // generate download
+        Notification(this, "Cv Generated", "is-success", "is-top-right");
+        window.document.location.href = req.data.filename;
       }
 
       if (req.status == "error") {

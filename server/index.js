@@ -25,7 +25,9 @@ async function start() {
   }
   app.use(cors())
   app.use(express.json())
-  app.use(express.static(__dirname + "/../public"))
+  console.log("__Dirname", __dirname)
+  app.use('/static', express.static(__dirname + "/public"))
+  // app.use(express.static(path.join(__dirname, 'public')))
 
   app.use(function (error, req, res, next) {
     if (error instanceof SyntaxError) { //Handle SyntaxError here.

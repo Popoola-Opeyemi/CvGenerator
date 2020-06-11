@@ -27,7 +27,6 @@ module.exports = {
 
 	},
 
-
 	cvHtml: (converter, jsonData) => {
 		return `<body class="boxed">
 	<center>

@@ -3,8 +3,8 @@ POST http://127.0.0.1:3000/api/generate
 Content-Type: application/json;charset=UTF-8
 
 {
-  "firstname": "Favour",
-  "lastname": "Ori",
+  "firstname": "opeyemi",
+  "lastname": "popoola",
   "contact": {
     "email": "favourdemo@gmail.com",
     "phone": "(870) 949-0000",

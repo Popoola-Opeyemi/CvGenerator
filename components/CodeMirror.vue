@@ -1,6 +1,6 @@
 <template>
   <div class="vue-codemirror">
-    <client-only placeholder="Codemirror Loading...">
+    <client-only placeholder="Loading Editor...">
       <div class="editor-controls">
         <div class="editor-controls-select">
           <b-select
@@ -53,6 +53,7 @@ export default Vue.extend({
       default: () => ""
     }
   },
+
   data() {
     return {
       theme: "dracula",
@@ -63,9 +64,10 @@ export default Vue.extend({
   methods: {
     onCmReady(cm: any) {
       cm.setSize("auto", "96vh");
+      this.cmOptions.theme = this.theme;
     },
     onCmFocus(cm: any) {
-      console.log("the editor is focused!", cm);
+      // console.log("the editor is focused!", cm);
     },
     onCmCodeChange(newCode: string) {
       this.$emit("input", newCode);

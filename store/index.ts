@@ -52,7 +52,9 @@ export const actions: ActionTree<RootState, RootState> = {
   async Post({ commit }, param) {
     try {
       let req = await this.$axios.$post(`api/${param.url}`, param.data);
-      return { status: "done", data: req };
+      if (!req.errors) {
+        return { status: "done", data: req.data };
+      }
     } catch (error) {
       console.log(error);
       return { status: "error", data: null };

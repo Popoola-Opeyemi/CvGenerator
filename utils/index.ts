@@ -38,13 +38,14 @@ export function Notification(
   self: any,
   message: string,
   type: string,
+  position = "is-top",
   duration = 2000
 ) {
   self.$buefy.snackbar.open({
     duration: duration,
     message: message,
     type: type,
-    position: "is-top-right"
+    position: position
   });
 }
 
@@ -71,4 +72,8 @@ export function Dialog(self: any, message: string, type: string) {
     type: type,
     position: "is-top"
   });
+}
+
+export function isEmpty(obj: object) {
+  return Object.keys(obj).length === 0;
 }
