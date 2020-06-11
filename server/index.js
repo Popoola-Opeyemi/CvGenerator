@@ -1,7 +1,10 @@
 const express = require('express')
 const consola = require('consola')
+const genRouter = require("./routes")
 const { Nuxt, Builder } = require('nuxt')
 const app = express()
+const cors = require('cors')
+
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')
@@ -20,13 +23,24 @@ async function start() {
     const builder = new Builder(nuxt)
     await builder.build()
   }
+  app.use(cors())
+  app.use(express.json())
+  app.use(express.static(__dirname + "/../public"))
 
-  app.get("/api/generate", (req, res) => {
-    res.send("hello")
-  })
+  app.use(function (error, req, res, next) {
+    if (error instanceof SyntaxError) { //Handle SyntaxError here.
+      return res.status(500).send({ data: "Invalid data", errors: true, });
+    } else {
+      next();
+    }
+  });
+
+  app.use(genRouter)
+
 
   // Give nuxt middleware to express
   app.use(nuxt.render)
+
 
   // Listen the server
   app.listen(port, host)

@@ -1,0 +1,146 @@
+###
+POST http://127.0.0.1:3000/api/generate
+Content-Type: application/json;charset=UTF-8
+
+{
+  "firstname": "Favour",
+  "lastname": "Ori",
+  "contact": {
+    "email": "favourdemo@gmail.com",
+    "phone": "(870) 949-0000",
+    "website": "www.favourori.github.io",
+    "linkedin": "linkedin.com/in/favourori/",
+    "github": "github.com/orifavour"
+  },
+  "skills": {
+    "details": [
+      {
+        "type": "Programming Languages",
+        "items": [
+          "Java",
+          "Swift",
+          "Python",
+          "Javascript",
+          "PHP",
+          "Ruby",
+          "Rails"
+        ]
+      },
+      {
+        "type": "Web Frameworks",
+        "items": ["Bootstrap", "Materialize", "Rails"]
+      },
+      {
+        "type": "Databases",
+        "items": ["MySQL", "SQLite"]
+      },
+      {
+        "type": "Tools",
+        "items": [
+          "Git",
+          "Sketch",
+          "Github",
+          "Craft by Invision",
+          "Andriod Studio",
+          "Xcode"
+        ]
+      },
+      {
+        "type": "Interests",
+        "items": [
+          "Software Development",
+          "Web Development",
+          "Machine Learning",
+          "Internet of Things"
+        ]
+      }
+    ]
+  },
+  "github_projects": {
+    "items": [
+      {
+        "project_name": "Bethel Church (App Backend)",
+        "tagline": "[iOS App Admin](https://github.com/orifavour/BethelChurchiOSAppBackend)",
+        "description": [
+          "Desktop App (developed in Java) for managing & controlling the content of Bethel's Mobile App"
+        ],
+        "technology_used": {
+          "tools": ["Java", "PHP", "MySQL"]
+        }
+      },
+      {
+        "project_name": "SAU Honors College",
+        "tagline": "[iOS App ](https://github.com/orifavour/iOSHonorsCollege)",
+        "description": [
+          "iOS App designed for SAU Honors College  to improve the mobile experience of students, faculty, and friends of the college."
+        ],
+        "technology_used": {
+          "tools": ["Swift", "Xcode"]
+        }
+      }
+    ]
+  },
+  "other_projects": {
+    "items": [
+      {
+        "headline": "iOS App – Bethel Church, Magnolia",
+        "points": [
+          "Designed an iOS app for Bethel Church, to reduce printing of bulletins, and to let members have direct access to podcasts, upcoming events etc."
+        ],
+        "technology_used": {
+          "tools": ["Swift", "MySQL", "PHP"]
+        }
+      },
+      {
+        "headline": "Course Selector – Computer Science Dept. SAU",
+        "points": ["Web App for seamless course selection and registration"],
+        "technology_used": {
+          "tools": ["HTML5", "CSS3", "PHP", "MySQL"]
+        }
+      }
+    ]
+  },
+  "work_experience": {
+    "items": [
+      {
+        "title": "Software Developer",
+        "organisation": "Southern Arkansas University",
+        "location": "Magnolia, AR",
+        "from": "January 2017",
+        "to": "Present",
+        "details": [
+          "Working closely with my professors on various researches & projects"
+        ],
+        "technology_used": {
+          "tools": ["Xcode", "Swift", "Java", "HTML5", "CSS3", "PHP"]
+        }
+      }
+    ]
+  },
+  "involvement": {
+    "organizations": ["Volunteer, Magnolia Blossom, OCT 2016"]
+  },
+  "education": {
+    "schools": [
+      {
+        "degree": "Bachelor of Science",
+        "major": "Computer Science",
+        "institution": "Southern Arkansas University",
+        "graduation_year": 2020
+      }
+    ]
+  },
+  "research_experience": {
+    "items": [
+      {
+        "title": "Web Hacking",
+        "organisation": "National Collegiate Honors Council",
+        "from": "February 2017",
+        "to": "April 2017",
+        "points": [
+          "Implemented encryption methods (MD5 and SHA-1)to secure a previously unsecure Web App"
+        ]
+      }
+    ]
+  }
+}
