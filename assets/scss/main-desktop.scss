@@ -68,17 +68,23 @@ html {
         color: white;
         background-repeat: no-repeat;
       }
+
       &__section-5 {
         padding: 60px 0px;
       }
+
       &__section-6 {
         padding: 100px 0px;
 
-        background-color: $custom-light-purple;
-        // background-color: $primary-green;
+        // background-color: $custom-light-purple;
+        background-color: #fff8f2;
         .app-slider {
           // width: 50%;
         }
+      }
+      &__section-7 {
+        padding: 50px 0px;
+        background-color: #fff8f2;
       }
     }
   }

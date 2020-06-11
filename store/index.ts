@@ -14,7 +14,7 @@ export const state = () => ({
     { name: "homepage", sections: "section-1", link: "/" },
     { name: "Features", sections: "section-2", link: "/backers" },
     { name: "Gallery", sections: "section-5", link: "/contact" },
-    { name: "Contact", sections: "section-5", link: "/contact" }
+    { name: "Contact", sections: "section-7", link: "/contact" }
   ] as Array<{}>,
 
   Socials: [

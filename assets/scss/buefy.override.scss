@@ -1,9 +1,13 @@
-.theme-selector {
-  select {
-    background-color: transparent;
+@media (max-width: 1199px) {
+  .control {
+    span.select {
+      select {
+        color: $primary-blue;
+        background-color: transparent;
+      }
+    }
   }
 }
-
 .carousel-list {
   &.has-shadow {
     box-shadow: unset !important;
@@ -14,13 +18,14 @@
   .tabs {
     ul {
       li {
-        background: #f5eff7;
+        background: black;
         color: #b5a4c8;
         border-color: #faf6fb #faf6fb #fff;
         font-size: 19px;
         a {
           padding: 1rem 1rem;
-          color: #b5a4c8;
+          // color: #fede67;
+          color: white;
         }
         a:hover {
           background-color: unset;
@@ -29,7 +34,9 @@
           a {
             color: black;
             padding: 1rem 1rem;
-            border-color: #ce75b4 #faf6fb #fff;
+            border-color: #3b4473 #faf6fb #fff;
+
+            // border-color: #ce75b4 #faf6fb #fff;
             // border-bottom-color: unset;
             border-width: 2px;
           }
@@ -46,6 +53,10 @@
 $colors: (
   "custom-green": (
     $primary-green,
+    white
+  ),
+  "custom-navy": (
+    $primary-navy,
     white
   )
 );

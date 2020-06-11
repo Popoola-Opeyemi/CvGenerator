@@ -9,7 +9,7 @@
             </p>
           </figure>
           <div class="media-content">
-            <div class="media-content-title title is-5 Qlight">
+            <div class="media-content-title is-col-navy title is-5 Qlight">
               {{ List.title }}
             </div>
             <div class="media-content-content">{{ List.content }}</div>

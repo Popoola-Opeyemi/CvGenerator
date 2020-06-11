@@ -1,13 +1,14 @@
 <template>
   <div class="moreInfo">
-    <div class="moreInfo__header has-text-centered is-col-purple">
+    <div class="moreInfo__header has-text-centered is-col-navy">
       <div class="moreInfo__header-title">Xtra</div>
       <div
-        class="moreInfo__header-subtitle title is-3 is-rubik-bold is-col-purple"
+        class="moreInfo__header-subtitle title is-3-desktop is-size-4-mobile is-rubik-bold is-col-navy"
       >
         More From Us
       </div>
     </div>
+
     <div class="moreInfo__switcher">
       <b-tabs type="is-boxed" :multiline="true" header="hello" expanded>
         <b-tab-item v-for="(item, idx) in ItemList" :key="idx">
@@ -20,7 +21,9 @@
                 <img src="app/4.png" alt="" srcset="" />
               </div>
               <div class="column">
-                <div class="tab-content__title title is-size-2 is-Qlight">
+                <div
+                  class="tab-content__title is-col-navy title is-size-2-desktop is-size-3-mobile is-Qlight"
+                >
                   {{ item.title }}
                 </div>
                 <div class="tab-content__subtitle is-size-5 is-Qlight ">
@@ -81,6 +84,18 @@ export default Vue.extend({
         padding: 30px 0px;
         color: grey;
       }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .moreInfo {
+    padding: 30px 0px;
+    &__header {
+      margin-bottom: 20px;
+    }
+    &__title {
+      padding-bottom: 20px;
     }
   }
 }

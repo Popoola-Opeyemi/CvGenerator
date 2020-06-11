@@ -1,10 +1,10 @@
 <template>
   <div class="carousel">
-    <div class="carousel__title is-size-7 has-text-centered is-col-purple">
+    <div class="carousel__title is-size-7 has-text-centered is-col-navy">
       GALLERY
     </div>
     <div
-      class="carousel__subtitle has-text-centered title is-3 is-rubik-bold is-col-purple"
+      class="carousel__subtitle has-text-centered title is-size-4-mobile is-size-3-desktop is-rubik-bold is-col-navy"
     >
       App Screenshots
     </div>

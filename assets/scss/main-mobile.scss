@@ -1,4 +1,77 @@
-html {
-  body {
+@media screen and (max-width: $bp-dsk) {
+  html {
+    body {
+      .homepage {
+        padding-top: 30px;
+
+        &__section {
+          padding: 0px 20px;
+
+          .leftContent {
+            margin-top: 60px;
+            &-content {
+              margin: 30px 0px 25px;
+            }
+            &-navigate {
+              &_second {
+                padding-left: 13px;
+                i.mdi {
+                  font-size: 20px;
+                }
+                span {
+                  // text-decoration: underline;
+                }
+              }
+            }
+          }
+          .right-content {
+            .image-container {
+              width: 550px;
+            }
+          }
+        }
+
+        &__section-2 {
+          padding: 10px 20px 30px 20px;
+          .section-title {
+            // text-align: center;
+          }
+        }
+
+        &__section-3 {
+          padding: 20px 20px;
+          .contain-left {
+            &-title {
+              padding: 5px 0px;
+            }
+            &-container {
+              margin-top: 20px;
+              .textContent {
+                padding-bottom: 15px;
+                &-title {
+                }
+                &-content {
+                  padding-top: 10px;
+                }
+              }
+            }
+          }
+        }
+
+        &__section-4 {
+          padding: 70px 20px;
+        }
+
+        &__section-5 {
+          padding: 40px 20px;
+        }
+        &__section-6 {
+          padding: 0px 20px;
+        }
+        &__section-7 {
+          padding: 0px 20px;
+        }
+      }
+    }
   }
 }

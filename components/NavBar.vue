@@ -2,7 +2,7 @@
   <div class="nav-container">
     <b-navbar :shadow="true" :fixed-top="true" class="nav-content">
       <template slot="brand">
-        <b-navbar-item tag="router-link" :to="{ path: '/' }">
+        <b-navbar-item tag="router-link" to="/">
           <img class="site-logo" width="25%" src="logo.png" />
         </b-navbar-item>
       </template>
@@ -13,34 +13,21 @@
           @click="navClick(nav.sections)"
           :key="nav.id"
         >
-          <div class="is-col-navy is-gbold is-capitalized">{{ nav.name }}</div>
+          <div class="is-gbold is-capitalized">{{ nav.name }}</div>
         </b-navbar-item>
 
-        <b-navbar-item href="#">
-          <nuxt-link to="/generate">
-            <b-button size="is-small is-info" outlined type="is-custom-success">
-              <div class=" is-gbold is-capitalized">
-                Generate Resume
-              </div>
-            </b-button>
-          </nuxt-link>
-        </b-navbar-item>
-
-        <b-navbar-item href="#" class="is-hidden-desktop">
-          <b-button class="is-size-6" type="is-custom-success">
+        <nuxt-link to="/generate" class="generate-link">
+          <b-button
+            class="is-hidden-mobile"
+            size="is-small is-info"
+            outlined
+            type="is-custom-success"
+          >
             <div class=" is-gbold is-capitalized">
-              Start Campaign
+              Generate Resume
             </div>
           </b-button>
-        </b-navbar-item>
-
-        <b-navbar-item href="#" class="is-hidden-desktop">
-          <b-button class="is-size-6" type="is-custom-success">
-            <div class=" is-gbold is-capitalized">
-              Donate now
-            </div>
-          </b-button>
-        </b-navbar-item>
+        </nuxt-link>
       </template>
     </b-navbar>
   </div>
@@ -82,6 +69,9 @@ export default Vue.extend({
     // top: 80px;
   }
   .nav-content {
+    .generate-link {
+      padding-top: 13px;
+    }
     .site-logo {
       max-height: 2rem;
     }
@@ -101,6 +91,9 @@ export default Vue.extend({
 @media (max-width: 1199px) {
   .nav-container {
     .nav-content {
+      a.navbar-burger {
+        color: white;
+      }
       padding: 0px 0px;
       text-align: center;
       .site-logo {

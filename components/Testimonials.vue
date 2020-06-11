@@ -3,9 +3,7 @@
     <div class="columns">
       <div class="column is-3">
         <div class="testimonials__left">
-          <div
-            class="testimonials__left-subtitle is-col-green is-Qbold is-size-7"
-          >
+          <div class="testimonials__left-subtitle is-Qbold is-size-7">
             Testimonials
           </div>
           <div class="testimonials__left-title ">
@@ -19,7 +17,7 @@
       </div>
       <div class="column">
         <div class="testimonials__right">
-          <div class="testimonials__right-icon is-Qbold is-size-3 is-col-green">
+          <div class="testimonials__right-icon is-Qbold is-size-3 ">
             “
           </div>
           <b-carousel
@@ -91,6 +89,43 @@ export default {
 
       .__author {
         padding-top: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .testimonials {
+    filter: blur();
+
+    padding: 30px 0px;
+    background: rgba(0, 0, 0, 0.72);
+
+    &__left {
+      padding: 10px 0px 0px 20px;
+      &-title {
+        padding-top: 20px;
+      }
+    }
+
+    &__right {
+      padding: 0px 20px;
+      &-carousel {
+        .__content {
+          line-height: 35px;
+        }
+        .__author::before {
+          content: "";
+          display: inline-block;
+          height: 2px;
+          width: 20px;
+          background-color: #41a394;
+          vertical-align: middle;
+          margin-right: 20px;
+        }
+
+        .__author {
+          padding-top: 20px;
+        }
       }
     }
   }

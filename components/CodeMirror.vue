@@ -112,4 +112,22 @@ export default Vue.extend({
   position: relative;
   border: 1px solid #dddddd;
 }
+@media (max-width: 1199px) {
+  .vue-codemirror {
+    position: relative;
+    .editor-controls {
+      position: absolute;
+      z-index: 4;
+      display: flex;
+      left: 50%;
+      top: 10px;
+    }
+  }
+
+  .theme-selector {
+    > span.select {
+      background-color: transparent;
+    }
+  }
+}
 </style>
