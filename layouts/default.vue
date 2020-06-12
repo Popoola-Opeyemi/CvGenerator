@@ -1,17 +1,11 @@
 <template>
   <div class="Homelayout">
-    <nav-bar
-      class="is-hidden-mobile"
-      :navfixed-top="true"
-      :nav-link="NavigationLink"
+    <Navigation
       @navClick="scroller($event)"
       v-scroll-to="`#${scroll}`"
+      :navigation-link="NavigationLink"
     />
-    <nav-bar
-      class="mobile-nav is-hidden-desktop"
-      :navfixed-top="true"
-      :nav-link="NavigationLink"
-    />
+
     <nuxt />
   </div>
 </template>
@@ -19,7 +13,7 @@
 <script lang="ts">
 import Vue from "vue";
 import { mapState } from "vuex";
-import NavBar from "~/components/NavBar.vue";
+import Navigation from "~/components/Navigation.vue";
 import CustomFooter from "~/components/CustomFooter.vue";
 
 export default Vue.extend({
@@ -29,8 +23,8 @@ export default Vue.extend({
     };
   },
   components: {
-    NavBar,
-    CustomFooter
+    CustomFooter,
+    Navigation
   },
   computed: {
     ...mapState(["NavigationLink", "Socials", "page_title", "navfixedTop"])

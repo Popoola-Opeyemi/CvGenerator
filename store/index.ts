@@ -11,10 +11,10 @@ export const state = () => ({
   page_title: "" as string,
   jsonData: {} as object,
   NavigationLink: [
-    { name: "homepage", sections: "section-1", link: "/" },
-    { name: "Features", sections: "section-2", link: "/backers" },
-    { name: "Gallery", sections: "section-5", link: "/contact" },
-    { name: "Contact", sections: "section-7", link: "/contact" }
+    { name: "homepage", sections: "section-1" },
+    { name: "Features", sections: "section-2" },
+    { name: "Gallery", sections: "section-5" },
+    { name: "Contact", sections: "section-7" }
   ] as Array<{}>,
 
   Socials: [

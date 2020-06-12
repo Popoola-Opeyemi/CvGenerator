@@ -36,6 +36,7 @@
     "vue-codemirror": "^4.0.6",
     "vue-coverflow": "^2.2.0",
     "vue-editor-js": "^2.0.0",
+    "vue-screen-size": "^1.0.1",
     "vue-scrollto": "^2.18.1"
   },
   "devDependencies": {

@@ -108,10 +108,6 @@ export default Vue.extend({
   components: {
     CodeMirror,
     EditorFooter
-  },
-  mounted() {
-    //@ts-ignore
-    window.jsonlint = this.$jsonlint;
   }
 });
 </script>

@@ -56,6 +56,8 @@ export default Vue.extend({
 
   data() {
     return {
+      width: 0 as number,
+      height: 0 as number,
       theme: "dracula",
       ListItem: ThemeList,
       cmOptions: cmOptions
@@ -63,8 +65,16 @@ export default Vue.extend({
   },
   methods: {
     onCmReady(cm: any) {
-      cm.setSize("auto", "96vh");
       this.cmOptions.theme = this.theme;
+
+      let height = this.height;
+      let width = this.width;
+
+      if (width < 1000) {
+        cm.setSize("auto", "95vh");
+      } else {
+        cm.setSize("auto", "96vh");
+      }
     },
     onCmFocus(cm: any) {
       // console.log("the editor is focused!", cm);
@@ -75,6 +85,18 @@ export default Vue.extend({
     themeslect(event: any) {
       this.cmOptions.theme = event;
     }
+  },
+  mounted() {
+    //@ts-ignore
+    this.width = this.$vssWidth;
+    //@ts-ignore
+    this.height = this.$vssHeight;
+    //@ts-ignore
+    window.jsonlint = this.$jsonlint;
+
+    let value = `${this.width},${this.height}`;
+
+    // window.alert(value);
   }
 });
 </script>

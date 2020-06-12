@@ -3,7 +3,9 @@
     <div class="left">
       <!-- <p>Powered by,</p> -->
       <div class="content is-flex">
-        <div class="content-text has-text-white is-size-6">Powered By</div>
+        <div class="content-text has-text-white is-size-6-desktop ">
+          Powered By
+        </div>
         <div class="content-logo">
           <nuxt-link to="/">
             <img class="logo-icon" src="logo.png" alt="" srcset="" />
@@ -15,7 +17,7 @@
       <div class="right__items">
         <b-button
           size="is-small"
-          class="right_items-download"
+          class="right__items-actions"
           type="is-info"
           outlined
           @click="download()"
@@ -25,7 +27,7 @@
       <div class="right__items">
         <b-button
           size="is-small"
-          class="right_items-reset"
+          class="right__items-actions"
           type="is-info"
           outlined
           @click="reset()"
@@ -35,7 +37,7 @@
       <div class="right__items">
         <b-button
           size="is-small"
-          class="right_items-reset"
+          class="right__items-actions"
           type="is-info"
           outlined
           @click="clear()"
@@ -91,7 +93,37 @@ export default Vue.extend({
     }
   }
 }
-
 @media (max-width: 1199px) {
+  .editor-footer {
+    height: 2.7rem;
+    border-top: 2px solid rgba(34, 40, 46, 0.8);
+    background-color: rgb(34, 40, 46);
+    justify-content: space-between;
+    .left {
+      .content {
+        &-text {
+          padding: 10px 10px 0px 10px;
+          font-size: 10px;
+          // padding-top: 5px;
+          // padding-right: 20px;
+        }
+        &-logo {
+          padding-top: 5px;
+          img.logo-icon {
+            max-height: 30px;
+          }
+        }
+      }
+    }
+    .right {
+      flex-direction: row-reverse;
+      &__items {
+        padding: 5px 5px 0px 0px;
+        &-actions {
+          font-size: 10px;
+        }
+      }
+    }
+  }
 }
 </style>

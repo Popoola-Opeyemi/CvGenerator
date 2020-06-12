@@ -35,7 +35,7 @@
           <div class="right-content has-text-centered">
             <img
               class="image-container"
-              src="oval_image.png"
+              src="oval-image.png"
               alt=""
               srcset=""
             />
@@ -148,7 +148,6 @@ import CustomCarousel from "~/components/AppCarousel.vue";
 import MoreInfo from "~/components/More.vue";
 import AppSlider from "~/components/CarouselList.vue";
 import ContactSection from "~/components/ContactSection.vue";
-import NavBar from "~/components/NavBar.vue";
 import { mapState } from "vuex";
 
 import {
@@ -166,8 +165,7 @@ export default Vue.extend({
     MoreInfo,
     CustomCarousel,
     AppSlider,
-    ContactSection,
-    NavBar
+    ContactSection
   },
   data() {
     return {
