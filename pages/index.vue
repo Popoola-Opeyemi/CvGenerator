@@ -20,11 +20,11 @@
                 <b-button
                   outlined
                   type="leftContent-navigate_first is-custom-navy"
-                  >Get Started</b-button
+                  >Generate Cv</b-button
                 >
               </nuxt-link>
               <div class="leftContent-navigate_second is-col-green">
-                <b-button outlined icon-left="mdi mdi-play" type="is-info ">
+                <b-button outlined icon-left="mdi mdi-play" type="is-danger ">
                   Watch the Video
                 </b-button>
               </div>
@@ -72,10 +72,12 @@
               Instant Cv, Anytime, Anywhere
             </div>
             <div class="contain-left-content">
-              Gulper eel dealfish ocean sunfish; rohu yellow-and-black triplefin
-              Atlantic saury swordfish southern sandfish Rudderfish long-finned
-              flyingfish. Fangtooth yellowtail banded killifish seamoth
+              Resume builder will help you while job hunting. We help you to
+              create a professional looking cv, just by commiting little edit,
+              so you can share your professional resume in pdf format quickly.
             </div>
+
+            <!-- <div class="contain-left-need">All you need to do is</div> -->
 
             <div class="contain-left-container">
               <div class="textContent">
@@ -158,6 +160,48 @@ import {
 } from "~/Vdata/index.ts";
 
 export default Vue.extend({
+  head() {
+    return {
+      title: "Resume Generator",
+      meta: [
+        {
+          property: "og:title",
+          content: "Resume Generator"
+        },
+        {
+          property: "og:description",
+          content:
+            "When its time to apply for that awsome tech job,we got you covered. With just few lines of json we get you a professional resume in less than 30 seconds"
+        },
+        {
+          property: "og:url",
+          content: "https://resumeb0t.herokuapp.com/"
+        },
+        {
+          property: "og:image",
+          content: ``
+        },
+
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "title",
+          name: "title",
+          content: "Resume Generator"
+        },
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Your One Stop Resume Generator Buit with love by developers for you"
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: "Resume, Cv Generator, Json Cv Generator, Fast Cv Generate"
+        }
+      ]
+    };
+  },
   components: {
     customSection,
     ItemList,

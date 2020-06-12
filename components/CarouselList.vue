@@ -8,6 +8,7 @@
     >
       App Screenshots
     </div>
+
     <b-carousel-list
       :data="Items"
       :repeat="repeat"

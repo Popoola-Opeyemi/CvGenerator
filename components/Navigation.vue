@@ -33,7 +33,7 @@
               type="is-custom-success"
             >
               <div class=" is-gbold is-capitalized">
-                Generate Resume
+                Start Here
               </div>
             </b-button>
           </nuxt-link>

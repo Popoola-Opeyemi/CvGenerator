@@ -4,9 +4,9 @@
       <div class="editor-controls">
         <div class="editor-controls-select">
           <b-select
+            class="theme-selector is-warning"
             v-model="theme"
             @input="themeslect($event)"
-            class="theme-selector is-warning"
             placeholder="Select a name"
             expanded
           >
@@ -141,12 +141,13 @@ export default Vue.extend({
       position: absolute;
       z-index: 4;
       display: flex;
-      left: 50%;
+      left: 67%;
       top: 10px;
     }
   }
 
   .theme-selector {
+    font-size: 10px;
     > span.select {
       background-color: transparent;
     }

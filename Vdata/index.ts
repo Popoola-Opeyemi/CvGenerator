@@ -81,7 +81,7 @@ export const FeatureList: Features = [
     color: "91d214",
     icon: "custom-icon-2.png",
     title: "Fast",
-    content: "Instantly generate your cv "
+    content: `Insanely fast cv generation to get you up to speed in  gettting that resume ready`
   }
 ];
 

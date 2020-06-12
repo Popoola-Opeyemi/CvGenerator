@@ -30,6 +30,47 @@ export default Vue.extend({
     return { cvData, original: cvData };
   },
 
+  head() {
+    return {
+      title: "Resume Editor",
+      meta: [
+        {
+          property: "og:title",
+          content: "Resume Generator Editor"
+        },
+        {
+          property: "og:description",
+          content: "Resume Editor made with love for you"
+        },
+        {
+          property: "og:url",
+          content: "https://resumeb0t.herokuapp.com/"
+        },
+        {
+          property: "og:image",
+          content: ``
+        },
+
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "title",
+          name: "title",
+          content: "Resume Editor"
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: "Resume Editor for your resume "
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: "Resume, Cv Generator, Json Cv Generator, Fast Cv Generate"
+        }
+      ]
+    };
+  },
+
   data() {
     return {
       isLoading: false as boolean,
