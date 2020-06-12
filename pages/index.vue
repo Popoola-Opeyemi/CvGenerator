@@ -35,7 +35,7 @@
           <div class="right-content has-text-centered">
             <img
               class="image-container"
-              src="oval-image.png"
+              src="homesection-1.png"
               alt=""
               srcset=""
             />
