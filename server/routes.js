@@ -15,19 +15,12 @@ router.post("/api/generate", async (req, res) => {
 
   let cvTemplate
 
-  // let dosomething = async () => {
-  //   await new Promise(done => setTimeout(() => console.log("hello there"), 180000));
-  // }
-
-
   try {
     cvTemplate = cvHtml(converter, userData)
 
   } catch (error) {
     return res.status(400).send({ errors: true, data: { "message": "cannot find fields" } })
   }
-
-
 
   //setting options for PDF
   var options = { format: 'A4' };

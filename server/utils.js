@@ -30,28 +30,6 @@ module.exports = {
 
 	},
 
-	cleanUp: () => {
-		// check if folder exist if it does continue else break off
-		let dirExist = fs.existsSync("./server/public")
-		try {
-			if (dirExist) {
-				rmdir(path.join(__dirname, "./public/"), (err) => {
-					if (err) {
-						throw err
-					}
-				});
-			}
-			if (!dirExist) {
-				fs.mkdirSync("./server/public");
-			}
-
-			return { done: true }
-
-		} catch (error) {
-			return { done: false, error }
-
-		}
-	},
 
 	cvHtml: (converter, jsonData) => {
 		return `<body class="boxed">
