@@ -17,7 +17,7 @@
       <div class="right__items">
         <b-button
           size="is-small"
-          class="right__items-actions"
+          class="right__items-actions-first"
           type="is-info"
           outlined
           @click="download()"
@@ -90,6 +90,11 @@ export default Vue.extend({
     flex-direction: row-reverse;
     &__items {
       padding: 5px 10px 0px 0px;
+      &-actions {
+        &-first {
+          margin-right: 15px;
+        }
+      }
     }
   }
 }
@@ -121,6 +126,9 @@ export default Vue.extend({
         padding: 5px 5px 0px 0px;
         &-actions {
           font-size: 10px;
+          &-first {
+            margin-right: 0px;
+          }
         }
       }
     }

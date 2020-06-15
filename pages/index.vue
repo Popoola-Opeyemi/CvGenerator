@@ -35,7 +35,7 @@
           <div class="right-content has-text-centered">
             <img
               class="image-container"
-              src="homesection-1.png"
+              src="homesection-2.png"
               alt=""
               srcset=""
             />
@@ -122,14 +122,13 @@
       <testimonials :Testimonials="Testimonials" />
     </custom-section>
 
-    <custom-section
+    <!-- <custom-section
       :class="'homepage__section-5'"
       :hide-container="false"
       id="section-5"
     >
-      <!-- <custom-carousel /> -->
       <app-slider :Items="SliderList" class="app-slider" />
-    </custom-section>
+    </custom-section> -->
 
     <custom-section :class="'homepage__section-6'" id="section-6">
       <more-info :item-list="moreItemsList" />

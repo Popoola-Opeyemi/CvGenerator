@@ -13,7 +13,7 @@ export const state = () => ({
   NavigationLink: [
     { name: "homepage", sections: "section-1" },
     { name: "Features", sections: "section-2" },
-    { name: "Gallery", sections: "section-5" },
+    { name: "Testimonials", sections: "section-4" },
     { name: "Contact", sections: "section-7" }
   ] as Array<{}>,
 
