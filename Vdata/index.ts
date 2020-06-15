@@ -11,6 +11,10 @@ export interface scrollOptions {
   y: boolean;
 }
 
+export interface mediaPlayer {
+  url: string;
+  component: any;
+}
 export interface parseTypes {
   status?: boolean;
   data?: { [key: string]: any };

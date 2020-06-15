@@ -24,7 +24,12 @@
                 >
               </nuxt-link>
               <div class="leftContent-navigate_second is-col-green">
-                <b-button outlined icon-left="mdi mdi-play" type="is-danger ">
+                <b-button
+                  @click="watchVideo"
+                  outlined
+                  icon-left="mdi mdi-play"
+                  type="is-danger "
+                >
                   Watch the Video
                 </b-button>
               </div>
@@ -95,8 +100,8 @@
                   Generate and Download
                 </div>
                 <div class="textContent-content is-rubik-light ">
-                  Once Editing is done Hover on the plus sign on the buttom to
-                  generate your cv
+                  Once editing is done look down you'll see button control to
+                  generate a download for your cv, simple as abc.
                 </div>
               </div>
               <div class="textContent">
@@ -149,12 +154,16 @@ import CustomCarousel from "~/components/AppCarousel.vue";
 import MoreInfo from "~/components/More.vue";
 import AppSlider from "~/components/CarouselList.vue";
 import ContactSection from "~/components/ContactSection.vue";
+import MediaPlayer from "@/components/MediaPlayer.vue";
+
+// import { getIdFromURL, getTimeFromURL } from "vue-youtube-embed";
 import { mapState } from "vuex";
 
 import {
   FeatureList,
   SliderList,
   TestimoniaList,
+  mediaPlayer,
   moreItemsList
 } from "~/Vdata/index.ts";
 
@@ -178,7 +187,7 @@ export default Vue.extend({
         },
         {
           property: "og:image",
-          content: ``
+          content: `/static/logo.png`
         },
 
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
@@ -191,7 +200,7 @@ export default Vue.extend({
           hid: "description",
           name: "description",
           content:
-            "Your One Stop Resume Generator Buit with love by developers for you"
+            "Your One Stop Resume Generator Buit with ❤️ by developers for you"
         },
         {
           hid: "keywords",
@@ -220,6 +229,26 @@ export default Vue.extend({
   },
   computed: {
     ...mapState(["NavigationLink", "Socials", "page_title", "navfixedTop"])
+  },
+  methods: {
+    watchVideo() {
+      let url: string = "https://youtu.be/zrhyF9bIeRk";
+      let data: mediaPlayer;
+
+      data = {
+        component: MediaPlayer,
+        //@ts-ignore
+        url: this.getIdFromURL(url)
+      };
+
+      //@ts-ignore
+      this.$buefy.modal.open({
+        parent: this,
+        component: data.component,
+        props: { data: data, width: "700", height: "800" },
+        hasModalCard: true
+      });
+    }
   }
 });
 </script>

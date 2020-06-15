@@ -5,10 +5,10 @@ module.exports = {
   ** Headers of the page
   */
 
-  // server: {
-  //   port: 3000, // default: 3000
-  //   host: '0.0.0.0' // default: localhost
-  // },
+  server: {
+    port: 3000, // default: 3000
+    host: '0.0.0.0' // default: localhost
+  },
 
   head: {
     title: process.env.npm_package_name || '',
@@ -38,8 +38,9 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-
+    // 
     { src: "@/plugins/vueScroll", ssr: false },
+    { src: "@/plugins/youtubeEmbedd", ssr: false },
     { src: "@/plugins/VueScreenSize", ssr: false },
     { src: "@/plugins/vueCodeMirror", ssr: false },
     { src: "@/plugins/jsonlint", ssr: false },
