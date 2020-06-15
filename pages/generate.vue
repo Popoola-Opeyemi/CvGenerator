@@ -15,7 +15,17 @@ import Vue from "vue";
 import CodeMirror from "@/components/CodeMirror.vue";
 import EditorFooter from "@/components/EditorFooter.vue";
 
-import { clone, tryParseJSON, Notification, Notify, isEmpty } from "@/utils";
+import { parseTypes } from "@/Vdata";
+
+import {
+  clone,
+  tryParseJSON,
+  Notification,
+  Notify,
+  isEmpty,
+  saveToLocalStorage,
+  getLocalStorage
+} from "@/utils";
 
 import cv from "@/Vdata/cv.json";
 
@@ -84,7 +94,7 @@ export default Vue.extend({
   methods: {
     async download(event: any) {
       //@ts-ignore
-      let isValid = tryParseJSON(this.$jsonlint, this.cvData);
+      let isValid: parseTypes = tryParseJSON(this.$jsonlint, this.cvData);
 
       if (!isValid.status) {
         Notify(
@@ -94,7 +104,7 @@ export default Vue.extend({
         );
         return;
       }
-      let empty = isEmpty(isValid.data);
+      let empty = isEmpty(isValid.data as parseTypes);
 
       if (empty) {
         Notify(
@@ -116,6 +126,7 @@ export default Vue.extend({
 
       if (req.status == "done") {
         this.isLoading = false;
+        saveToLocalStorage("cvData", isValid.data as parseTypes);
         Notification(this, "Cv Generated", "is-success", "is-top-right");
         window.document.location.href = req.data.filename;
       }
@@ -129,12 +140,13 @@ export default Vue.extend({
           "is-top-right"
         );
       }
+      isValid = {};
     },
 
     input(event: any) {
       //@ts-ignore
       const isValid = tryParseJSON(this.$jsonlint, event);
-      this.valid = isValid.status;
+      this.valid = isValid.status as boolean;
     },
 
     reset(event: any) {
@@ -149,6 +161,12 @@ export default Vue.extend({
   components: {
     CodeMirror,
     EditorFooter
+  },
+  mounted() {
+    let storedCv = getLocalStorage("cvData");
+    if (!storedCv == false) {
+      this.cvData = JSON.stringify(storedCv, null, 2);
+    }
   }
 });
 </script>

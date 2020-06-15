@@ -138,7 +138,7 @@ export default Vue.extend({
   .vue-codemirror {
     position: relative;
     .editor-controls {
-      position: absolute;
+      position: fixed;
       z-index: 4;
       display: flex;
       left: 67%;

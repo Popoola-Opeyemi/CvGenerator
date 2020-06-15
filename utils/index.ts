@@ -1,4 +1,5 @@
-export const getLocalStorage = (key: string): boolean | object => {
+import { parseTypes } from "@/Vdata";
+export const getLocalStorage = (key: string) => {
   const json: string = window.localStorage[key];
   if (json == "undefined" || json == undefined) {
     return false;
@@ -18,7 +19,7 @@ export function clone(val: any) {
   return JSON.parse(JSON.stringify(val));
 }
 
-export function tryParseJSON(self: any, jsonString: string) {
+export function tryParseJSON(self: any, jsonString: string): parseTypes {
   try {
     let o = self.parse(jsonString);
 

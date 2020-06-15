@@ -11,6 +11,12 @@ export interface scrollOptions {
   y: boolean;
 }
 
+export interface parseTypes {
+  status?: boolean;
+  data?: { [key: string]: any };
+  // data?: object;s
+}
+
 interface codeMirror {
   gutters?: Array<string>;
   lint?: boolean;
