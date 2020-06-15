@@ -5,10 +5,10 @@ module.exports = {
   ** Headers of the page
   */
 
-  server: {
-    port: 3000, // default: 3000
-    host: '0.0.0.0' // default: localhost
-  },
+  // server: {
+  //   port: 3000, // default: 3000
+  //   host: '0.0.0.0' // default: localhost
+  // },
 
   head: {
     title: process.env.npm_package_name || '',
