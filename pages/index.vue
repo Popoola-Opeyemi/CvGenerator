@@ -232,7 +232,7 @@ export default Vue.extend({
   },
   methods: {
     watchVideo() {
-      let url: string = "https://youtu.be/zrhyF9bIeRk";
+      let url: string = "https://youtu.be/kfJhKooQcgc";
       let data: mediaPlayer;
 
       data = {
