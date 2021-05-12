@@ -31,7 +31,7 @@
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
     "showdown": "^1.9.1",
-    "swiper": "^5.4.2",
+    "swiper": "^6.5.1",
     "system": "^2.0.1",
     "uuid": "^8.1.0",
     "vue-codemirror": "^4.0.6",
