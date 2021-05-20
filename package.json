@@ -21,7 +21,7 @@
     "file": "^0.2.2",
     "fs": "0.0.1-security",
     "hbs": "^4.1.1",
-    "html-pdf": "^2.2.0",
+    "html-pdf": "^3.0.1",
     "jsonlint": "^1.6.3",
     "node-sass": "^4.14.1",
     "nuxt": "^2.0.0",
