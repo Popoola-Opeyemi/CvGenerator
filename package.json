@@ -23,7 +23,7 @@
     "hbs": "^4.1.1",
     "html-pdf": "^2.2.0",
     "jsonlint": "^1.6.3",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.2",
     "phantom": "^6.3.0",
