@@ -24,7 +24,7 @@
     "html-pdf": "^2.2.0",
     "jsonlint": "^1.6.3",
     "node-sass": "^4.14.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "nuxt-buefy": "^0.3.2",
     "phantom": "^6.3.0",
     "phantomjs-prebuilt": "^2.1.16",
